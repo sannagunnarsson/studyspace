@@ -8,7 +8,7 @@ import {
   parseIcsDate,
   spanOf,
   toRoomBookings,
-} from './ics.ts';
+} from './ics.js';
 
 describe('several feeds', () => {
   const a = { roomId: '2040', start: '2026-11-18T07:00:00.000Z', end: '2026-11-18T08:00:00.000Z' };
@@ -36,7 +36,7 @@ describe('feedCoverage', () => {
     expect(feedCoverage(parseIcs(FEED))).toEqual({ from: '2026-11-18', to: '2026-11-19' });
   });
   it('counts an event ending at midnight as the earlier day', () => {
-    const ev = [{ start: new Date(2026, 11, 18, 20), end: new Date(2026, 11, 19, 0), text: '' }];
+    const ev = [{ start: new Date('2026-12-18T20:00:00+01:00'), end: new Date('2026-12-19T00:00:00+01:00'), text: '' }];
     expect(feedCoverage(ev)).toEqual({ from: '2026-12-18', to: '2026-12-18' });
   });
   it('is null for an empty feed', () => {

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { parseFeedUrls } from './bookingsPlugin.ts';
+import { parseFeedUrls } from './bookingsPlugin.js';
 
 describe('parseFeedUrls', () => {
   it('splits on spaces, commas and new lines and upgrades webcal', () => {

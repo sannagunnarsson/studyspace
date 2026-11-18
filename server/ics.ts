@@ -91,8 +91,40 @@ export interface Coverage {
   to: string; // YYYY-MM-DD, last day with any event
 }
 
-const dateKey = (d: Date) =>
-  `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+/**
+ * All day logic uses Swedish time explicitly, so results are the same on a laptop
+ * and on a hosting server that runs in UTC (like Vercel).
+ */
+export const TIME_ZONE = 'Europe/Stockholm';
+const dayFormat = new Intl.DateTimeFormat('en-CA', { timeZone: TIME_ZONE, year: 'numeric', month: '2-digit', day: '2-digit' });
+const partsFormat = new Intl.DateTimeFormat('en-US', {
+  timeZone: TIME_ZONE,
+  hourCycle: 'h23',
+  year: 'numeric',
+  month: 'numeric',
+  day: 'numeric',
+  hour: 'numeric',
+  minute: 'numeric',
+  second: 'numeric',
+});
+
+/** YYYY-MM-DD of an instant, in Swedish time. */
+const dateKey = (d: Date) => dayFormat.format(d);
+
+/** How far Swedish wall-clock time is ahead of UTC at a given instant, in ms. */
+function offsetMs(d: Date): number {
+  const p = Object.fromEntries(partsFormat.formatToParts(d).map((x) => [x.type, Number(x.value)]));
+  return Date.UTC(p.year, p.month - 1, p.day, p.hour, p.minute, p.second) - Math.floor(d.getTime() / 1000) * 1000;
+}
+
+/** The instant a YYYY-MM-DD day starts in Swedish time; `addDays` moves to a later day. */
+export function startOfDay(key: string, addDays = 0): Date {
+  const [y, m, d] = key.split('-').map(Number);
+  const utcMidnight = Date.UTC(y, m - 1, d + addDays);
+  // Two passes so the offset is the one in force at local midnight (DST-safe).
+  const first = utcMidnight - offsetMs(new Date(utcMidnight));
+  return new Date(utcMidnight - offsetMs(new Date(first)));
+}
 
 /**
  * The span of days the feed has data for, in local time. TimeEdit subscription

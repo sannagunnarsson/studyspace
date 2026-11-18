@@ -30,3 +30,12 @@ If you are developing a production application, we recommend enabling type-aware
 ```
 
 See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+
+## Deploy on Vercel
+
+1. Import the repository on vercel.com (framework: Vite, defaults are fine).
+2. Under **Settings → Environment Variables**, add `TIMEEDIT_ICS_URL` with your TimeEdit subscription link
+   (several links can be separated by spaces or commas). Redeploy afterwards.
+
+Locally, `/api/bookings` is served by the Vite dev server (`server/bookingsPlugin.ts`); on Vercel the same logic
+runs as a serverless function (`api/bookings.ts`). Both use `server/bookingsApi.ts`.
