@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Schibsted Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --color-paper: var(--paper);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-free: var(--free);
+  --color-short: var(--short);
+  --color-soon: var(--soon);
+  --color-busy: var(--busy);
+  --shadow-float: 0 1px 2px rgb(0 0 0 / 0.06), 0 6px 20px rgb(0 0 0 / 0.1);
+}
+
+:root {
+  color-scheme: light dark;
+  --paper: #edf0eb;
+  --surface: #fbfcfa;
+  --ink: #17201c;
+  --muted: #56615b;
+  --line: #d5dbd4;
+  --free: #2e7d57;
+  --short: #86b99b;
+  --soon: #c2861a;
+  --busy: #b23b36;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #111714;
+    --surface: #18201c;
+    --ink: #e6ebe7;
+    --muted: #9aa69f;
+    --line: #2c3631;
+    --free: #4fb282;
+    --short: #3d7558;
+    --soon: #e0a43a;
+    --busy: #e0605a;
+  }
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+
+input[type='range'] {
+  accent-color: var(--ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}

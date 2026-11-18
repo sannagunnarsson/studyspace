@@ -1,0 +1,1019 @@
+[
+  {
+    "id": "101154",
+    "name": "Room 101154",
+    "timeEditId": "5400949",
+    "type": "group-room",
+    "seats": 12,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-101154"
+  },
+  {
+    "id": "101156",
+    "name": "Room 101156",
+    "timeEditId": "5400948",
+    "type": "group-room",
+    "seats": 12,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-101156"
+  },
+  {
+    "id": "101168",
+    "name": "Room 101168",
+    "timeEditId": "5400942",
+    "type": "group-room",
+    "seats": 12,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-101168"
+  },
+  {
+    "id": "101170",
+    "name": "Room 101170",
+    "timeEditId": "5400943",
+    "type": "group-room",
+    "seats": 12,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-101170"
+  },
+  {
+    "id": "101174",
+    "name": "Room 101174",
+    "timeEditId": "5400944",
+    "type": "group-room",
+    "seats": 12,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-101174"
+  },
+  {
+    "id": "101180",
+    "name": "Room 101180",
+    "timeEditId": "5400945",
+    "type": "group-room",
+    "seats": 12,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-101180"
+  },
+  {
+    "id": "101182",
+    "name": "Room 101182",
+    "timeEditId": "5400946",
+    "type": "group-room",
+    "seats": 12,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-101182"
+  },
+  {
+    "id": "101192",
+    "name": "Room 101192",
+    "timeEditId": "5400947",
+    "type": "group-room",
+    "seats": 12,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-101192"
+  },
+  {
+    "id": "10131",
+    "name": "Room 10131",
+    "timeEditId": "250806",
+    "type": "group-room",
+    "seats": 8,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-10131"
+  },
+  {
+    "id": "10133",
+    "name": "Room 10133",
+    "timeEditId": "250807",
+    "type": "group-room",
+    "seats": 8,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-10133"
+  },
+  {
+    "id": "10205",
+    "name": "Room 10205",
+    "timeEditId": "250810",
+    "type": "group-room",
+    "seats": 6,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-10205"
+  },
+  {
+    "id": "10207",
+    "name": "Room 10207",
+    "timeEditId": "5425331",
+    "type": "group-room",
+    "seats": 6,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-10207"
+  },
+  {
+    "id": "10208",
+    "name": "Room 10208",
+    "timeEditId": "250811",
+    "type": "group-room",
+    "seats": 6,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-10208"
+  },
+  {
+    "id": "10210",
+    "name": "Room 10210",
+    "timeEditId": "5412953",
+    "type": "group-room",
+    "seats": 6,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-10210"
+  },
+  {
+    "id": "10211",
+    "name": "Room 10211",
+    "timeEditId": "250812",
+    "type": "group-room",
+    "seats": 4,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-10211"
+  },
+  {
+    "id": "10212",
+    "name": "Room 10212",
+    "timeEditId": "250813",
+    "type": "group-room",
+    "seats": 4,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-10212"
+  },
+  {
+    "id": "10213",
+    "name": "Room 10213",
+    "timeEditId": "250814",
+    "type": "group-room",
+    "seats": 4,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-10213"
+  },
+  {
+    "id": "10214",
+    "name": "Room 10214",
+    "timeEditId": "257417",
+    "type": "group-room",
+    "seats": 4,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-10214"
+  },
+  {
+    "id": "10215",
+    "name": "Room 10215",
+    "timeEditId": "5425330",
+    "type": "group-room",
+    "seats": 4,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-10215"
+  },
+  {
+    "id": "1403",
+    "name": "Room 1403",
+    "timeEditId": "1970905",
+    "type": "study-area",
+    "seats": 6,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-1403"
+  },
+  {
+    "id": "1K1636",
+    "name": "Room 1K1636",
+    "timeEditId": "3527618",
+    "type": "lunch-room",
+    "seats": 0,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-1K1636"
+  },
+  {
+    "id": "2040",
+    "name": "Room 2040",
+    "timeEditId": "250816",
+    "type": "group-room",
+    "seats": 4,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-2040"
+  },
+  {
+    "id": "2041",
+    "name": "Room 2041",
+    "timeEditId": "250817",
+    "type": "group-room",
+    "seats": 4,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-2041"
+  },
+  {
+    "id": "2042",
+    "name": "Room 2042",
+    "timeEditId": "250818",
+    "type": "group-room",
+    "seats": 4,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-2042"
+  },
+  {
+    "id": "2043",
+    "name": "Room 2043",
+    "timeEditId": "250819",
+    "type": "group-room",
+    "seats": 4,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-2043"
+  },
+  {
+    "id": "2044",
+    "name": "Room 2044",
+    "timeEditId": "250820",
+    "type": "group-room",
+    "seats": 4,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-2044"
+  },
+  {
+    "id": "2045",
+    "name": "Room 2045",
+    "timeEditId": "250821",
+    "type": "group-room",
+    "seats": 4,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=poi&sharepoi=1002388649"
+  },
+  {
+    "id": "2046",
+    "name": "Room 2046",
+    "timeEditId": "250822",
+    "type": "group-room",
+    "seats": 6,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-2046"
+  },
+  {
+    "id": "80412",
+    "name": "Room 80412",
+    "timeEditId": "250769",
+    "type": "group-room",
+    "seats": 10,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-80412"
+  },
+  {
+    "id": "90105",
+    "name": "Room 90105",
+    "timeEditId": "5413601",
+    "type": "study-area",
+    "seats": 6,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-90105"
+  },
+  {
+    "id": "90402",
+    "name": "Room 90402",
+    "timeEditId": "5402693",
+    "type": "group-room",
+    "seats": 10,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-90402"
+  },
+  {
+    "id": "90403",
+    "name": "Room 90403",
+    "timeEditId": "5402694",
+    "type": "group-room",
+    "seats": 10,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-90403"
+  },
+  {
+    "id": "90409",
+    "name": "Room 90409",
+    "timeEditId": "5402695",
+    "type": "group-room",
+    "seats": 10,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-90409"
+  },
+  {
+    "id": "100155",
+    "name": "Theatrum Visuale",
+    "timeEditId": "5419364",
+    "type": "lecture-hall",
+    "seats": 36,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-100155"
+  },
+  {
+    "id": "100195",
+    "name": "Eva von Bahr",
+    "timeEditId": "5398483",
+    "type": "lecture-hall",
+    "seats": 320,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-100195"
+  },
+  {
+    "id": "10101",
+    "name": "Siegbahnsalen",
+    "timeEditId": "250703",
+    "type": "lecture-hall",
+    "seats": 220,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=poi&sharepoi=389828"
+  },
+  {
+    "id": "101121",
+    "name": "Sonja Lyttkens",
+    "timeEditId": "5398484",
+    "type": "lecture-hall",
+    "seats": 180,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-101121"
+  },
+  {
+    "id": "101125",
+    "name": "Room 101125",
+    "timeEditId": "5398496",
+    "type": "classroom",
+    "seats": 20,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-101125"
+  },
+  {
+    "id": "101127",
+    "name": "Room 101127",
+    "timeEditId": "5398489",
+    "type": "classroom",
+    "seats": 32,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-101127"
+  },
+  {
+    "id": "101130",
+    "name": "Room 101130",
+    "timeEditId": "5398486",
+    "type": "classroom",
+    "seats": 50,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-101130"
+  },
+  {
+    "id": "101132",
+    "name": "Room 101132",
+    "timeEditId": "5398487",
+    "type": "classroom",
+    "seats": 50,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-101132"
+  },
+  {
+    "id": "101136",
+    "name": "Evelyn Sokolowski",
+    "timeEditId": "5398500",
+    "type": "lecture-hall",
+    "seats": 120,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-101136"
+  },
+  {
+    "id": "101142",
+    "name": "Room 101142",
+    "timeEditId": "5398490",
+    "type": "classroom",
+    "seats": 32,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-101142"
+  },
+  {
+    "id": "101146",
+    "name": "Room 101146",
+    "timeEditId": "5398491",
+    "type": "classroom",
+    "seats": 32,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-101146"
+  },
+  {
+    "id": "101150",
+    "name": "Room 101150",
+    "timeEditId": "5398492",
+    "type": "classroom",
+    "seats": 32,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-101150"
+  },
+  {
+    "id": "101158",
+    "name": "Room 101158",
+    "timeEditId": "5398493",
+    "type": "classroom",
+    "seats": 32,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-101158"
+  },
+  {
+    "id": "101162",
+    "name": "Room 101162",
+    "timeEditId": "5398494",
+    "type": "classroom",
+    "seats": 32,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-101162"
+  },
+  {
+    "id": "101166",
+    "name": "Room 101166",
+    "timeEditId": "5398495",
+    "type": "classroom",
+    "seats": 32,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-101166"
+  },
+  {
+    "id": "101172",
+    "name": "Room 101172",
+    "timeEditId": "5398499",
+    "type": "classroom",
+    "seats": 20,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-101172"
+  },
+  {
+    "id": "101190",
+    "name": "Room 101190",
+    "timeEditId": "5398488",
+    "type": "classroom",
+    "seats": 50,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-101190"
+  },
+  {
+    "id": "101195",
+    "name": "Heinz-Otto Kreiss",
+    "timeEditId": "5398485",
+    "type": "lecture-hall",
+    "seats": 180,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-101195"
+  },
+  {
+    "id": "101258",
+    "name": "Room 101258",
+    "timeEditId": "5398497",
+    "type": "classroom",
+    "seats": 20,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-101258"
+  },
+  {
+    "id": "101260",
+    "name": "Room 101260",
+    "timeEditId": "5398498",
+    "type": "classroom",
+    "seats": 20,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-101260"
+  },
+  {
+    "id": "10132",
+    "name": "Häggsalen",
+    "timeEditId": "250702",
+    "type": "lecture-hall",
+    "seats": 120,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=poi&sharepoi=389932"
+  },
+  {
+    "id": "10134",
+    "name": "Polhemsalen",
+    "timeEditId": "250790",
+    "type": "lecture-hall",
+    "seats": 120,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=poi&sharepoi=389924"
+  },
+  {
+    "id": "10K1121",
+    "name": "Room 10K1121",
+    "timeEditId": "5409890",
+    "type": "computer-lab",
+    "seats": 20,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-10K1121"
+  },
+  {
+    "id": "10K1125",
+    "name": "Room 10K1125",
+    "timeEditId": "5409891",
+    "type": "computer-lab",
+    "seats": 14,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-10K1125"
+  },
+  {
+    "id": "10K1201",
+    "name": "Room 10K1201",
+    "timeEditId": "5398503",
+    "type": "computer-lab",
+    "seats": 52,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=poi&sharepoi=1000824213"
+  },
+  {
+    "id": "10K1203",
+    "name": "Room 10K1203",
+    "timeEditId": "5398506",
+    "type": "computer-lab",
+    "seats": 50,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=poi&sharepoi=1000824267"
+  },
+  {
+    "id": "10K1205",
+    "name": "Room 10K1205",
+    "timeEditId": "5409892",
+    "type": "computer-lab",
+    "seats": 12,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-10K1205"
+  },
+  {
+    "id": "10K1206",
+    "name": "Room 10K1206",
+    "timeEditId": "5409893",
+    "type": "computer-lab",
+    "seats": 12,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-10K1206"
+  },
+  {
+    "id": "10K1210",
+    "name": "Room 10K1210",
+    "timeEditId": "5409894",
+    "type": "computer-lab",
+    "seats": 16,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-10K1210"
+  },
+  {
+    "id": "11167",
+    "name": "Room 11167",
+    "timeEditId": "250743",
+    "type": "classroom",
+    "seats": 20,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=poi&sharepoi=390780"
+  },
+  {
+    "id": "12167",
+    "name": "Room 12167",
+    "timeEditId": "250744",
+    "type": "classroom",
+    "seats": 24,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=poi&sharepoi=391194"
+  },
+  {
+    "id": "2001",
+    "name": "Room 2001",
+    "timeEditId": "250746",
+    "type": "classroom",
+    "seats": 91,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=poi&sharepoi=390487"
+  },
+  {
+    "id": "2002",
+    "name": "Room 2002",
+    "timeEditId": "250747",
+    "type": "classroom",
+    "seats": 50,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=poi&sharepoi=390514"
+  },
+  {
+    "id": "2003",
+    "name": "Room 2003",
+    "timeEditId": "250748",
+    "type": "classroom",
+    "seats": 38,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=poi&sharepoi=390478"
+  },
+  {
+    "id": "2004",
+    "name": "Room 2004",
+    "timeEditId": "250749",
+    "type": "classroom",
+    "seats": 50,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=poi&sharepoi=390521"
+  },
+  {
+    "id": "2005",
+    "name": "Room 2005",
+    "timeEditId": "250750",
+    "type": "classroom",
+    "seats": 91,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=poi&sharepoi=390532"
+  },
+  {
+    "id": "4001",
+    "name": "Room 4001",
+    "timeEditId": "250751",
+    "type": "classroom",
+    "seats": 91,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=poi&sharepoi=390566"
+  },
+  {
+    "id": "4003",
+    "name": "Room 4003",
+    "timeEditId": "250752",
+    "type": "classroom",
+    "seats": 40,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=poi&sharepoi=390554"
+  },
+  {
+    "id": "4004",
+    "name": "Room 4004",
+    "timeEditId": "250753",
+    "type": "classroom",
+    "seats": 40,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=poi&sharepoi=390576"
+  },
+  {
+    "id": "4005",
+    "name": "Room 4005",
+    "timeEditId": "250754",
+    "type": "classroom",
+    "seats": 40,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=poi&sharepoi=390526"
+  },
+  {
+    "id": "4006",
+    "name": "Room 4006",
+    "timeEditId": "250755",
+    "type": "classroom",
+    "seats": 40,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=poi&sharepoi=390527"
+  },
+  {
+    "id": "4007",
+    "name": "Room 4007",
+    "timeEditId": "250756",
+    "type": "classroom",
+    "seats": 40,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=poi&sharepoi=390579"
+  },
+  {
+    "id": "4101",
+    "name": "Room 4101",
+    "timeEditId": "250757",
+    "type": "classroom",
+    "seats": 91,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=poi&sharepoi=389584"
+  },
+  {
+    "id": "4102",
+    "name": "Room 4102",
+    "timeEditId": "250711",
+    "type": "computer-lab",
+    "seats": 38,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=poi&sharepoi=389593"
+  },
+  {
+    "id": "4103",
+    "name": "Room 4103",
+    "timeEditId": "250704",
+    "type": "computer-lab",
+    "seats": 32,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=poi&sharepoi=389605"
+  },
+  {
+    "id": "4104",
+    "name": "Room 4104",
+    "timeEditId": "250705",
+    "type": "computer-lab",
+    "seats": 32,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=poi&sharepoi=389590"
+  },
+  {
+    "id": "6K1101",
+    "name": "Room 6K1101",
+    "timeEditId": "250713",
+    "type": "computer-lab",
+    "seats": 30,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=poi&sharepoi=391805"
+  },
+  {
+    "id": "6K1107",
+    "name": "Room 6K1107",
+    "timeEditId": "250762",
+    "type": "computer-lab",
+    "seats": 32,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=poi&sharepoi=391809"
+  },
+  {
+    "id": "6K1113",
+    "name": "Room 6K1113",
+    "timeEditId": "250763",
+    "type": "computer-lab",
+    "seats": 50,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=poi&sharepoi=391810"
+  },
+  {
+    "id": "6K1123",
+    "name": "Room 6K1123",
+    "timeEditId": "250721",
+    "type": "computer-lab",
+    "seats": 50,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=poi&sharepoi=391812"
+  },
+  {
+    "id": "80101",
+    "name": "Room 80101",
+    "timeEditId": "250764",
+    "type": "classroom",
+    "seats": 98,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=poi&sharepoi=389883"
+  },
+  {
+    "id": "80109",
+    "name": "Room 80109",
+    "timeEditId": "250765",
+    "type": "classroom",
+    "seats": 40,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=poi&sharepoi=389922"
+  },
+  {
+    "id": "80115",
+    "name": "Room 80115",
+    "timeEditId": "250766",
+    "type": "classroom",
+    "seats": 50,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=poi&sharepoi=389923"
+  },
+  {
+    "id": "80121",
+    "name": "Room 80121",
+    "timeEditId": "250767",
+    "type": "classroom",
+    "seats": 70,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=poi&sharepoi=389925"
+  },
+  {
+    "id": "80127",
+    "name": "Room 80127",
+    "timeEditId": "250768",
+    "type": "classroom",
+    "seats": 70,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=poi&sharepoi=389926"
+  },
+  {
+    "id": "90101",
+    "name": "Room 90101",
+    "timeEditId": "4100579",
+    "type": "classroom",
+    "seats": 60,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=poi&sharepoi=1000140029"
+  },
+  {
+    "id": "90102",
+    "name": "Room 90102",
+    "timeEditId": "4100578",
+    "type": "classroom",
+    "seats": 60,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=poi&sharepoi=1000140058"
+  },
+  {
+    "id": "90103",
+    "name": "Room 90103",
+    "timeEditId": "4100577",
+    "type": "classroom",
+    "seats": 48,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=poi&sharepoi=1000140054"
+  },
+  {
+    "id": "90104",
+    "name": "Room 90104",
+    "timeEditId": "5432317",
+    "type": "classroom",
+    "seats": 20,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=poi&sharepoi=1000140026"
+  },
+  {
+    "id": "90106",
+    "name": "Room 90106",
+    "timeEditId": "4100580",
+    "type": "classroom",
+    "seats": 20,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=poi&sharepoi=1000140032"
+  },
+  {
+    "id": "102162",
+    "name": "Room 102162",
+    "timeEditId": null,
+    "type": "classroom",
+    "seats": 0,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-102162"
+  },
+  {
+    "id": "11134",
+    "name": "Room 11134",
+    "timeEditId": null,
+    "type": "classroom",
+    "seats": 0,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=poi&sharepoi=1001095512"
+  },
+  {
+    "id": "11137",
+    "name": "Room 11137",
+    "timeEditId": null,
+    "type": "classroom",
+    "seats": 0,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-11137"
+  },
+  {
+    "id": "4002",
+    "name": "Room 4002",
+    "timeEditId": null,
+    "type": "classroom",
+    "seats": 0,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-4002"
+  },
+  {
+    "id": "106277",
+    "name": "Room 106277",
+    "timeEditId": null,
+    "type": "seminar-room",
+    "seats": 0,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=poi&sharepoi=1000825187"
+  },
+  {
+    "id": "105277",
+    "name": "Room 105277",
+    "timeEditId": null,
+    "type": "seminar-room",
+    "seats": 0,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=poi&sharepoi=1000825026"
+  },
+  {
+    "id": "104277",
+    "name": "Room 104277",
+    "timeEditId": null,
+    "type": "seminar-room",
+    "seats": 0,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=poi&sharepoi=1000824995"
+  },
+  {
+    "id": "104253",
+    "name": "Room 104253",
+    "timeEditId": null,
+    "type": "seminar-room",
+    "seats": 0,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=poi&sharepoi=1000824932"
+  },
+  {
+    "id": "104245",
+    "name": "Room 104245",
+    "timeEditId": null,
+    "type": "seminar-room",
+    "seats": 0,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=poi&sharepoi=1000824978"
+  },
+  {
+    "id": "104190",
+    "name": "Room 104190",
+    "timeEditId": null,
+    "type": "seminar-room",
+    "seats": 0,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=poi&sharepoi=1000824915"
+  },
+  {
+    "id": "104170",
+    "name": "Room 104170",
+    "timeEditId": null,
+    "type": "seminar-room",
+    "seats": 0,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=poi&sharepoi=1000824986"
+  },
+  {
+    "id": "104150",
+    "name": "Room 104150",
+    "timeEditId": null,
+    "type": "seminar-room",
+    "seats": 0,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=poi&sharepoi=1000824967"
+  },
+  {
+    "id": "104130",
+    "name": "Room 104130",
+    "timeEditId": null,
+    "type": "seminar-room",
+    "seats": 0,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=poi&sharepoi=1000824960"
+  },
+  {
+    "id": "103253",
+    "name": "Room 103253",
+    "timeEditId": null,
+    "type": "seminar-room",
+    "seats": 0,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=poi&sharepoi=1000824825"
+  },
+  {
+    "id": "103235",
+    "name": "Room 103235",
+    "timeEditId": null,
+    "type": "seminar-room",
+    "seats": 0,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=poi&sharepoi=1000824797"
+  },
+  {
+    "id": "103170",
+    "name": "Room 103170",
+    "timeEditId": null,
+    "type": "seminar-room",
+    "seats": 0,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=poi&sharepoi=1000824777"
+  },
+  {
+    "id": "103130",
+    "name": "Room 103130",
+    "timeEditId": null,
+    "type": "seminar-room",
+    "seats": 0,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=poi&sharepoi=1000824731"
+  },
+  {
+    "id": "102235",
+    "name": "Room 102235",
+    "timeEditId": null,
+    "type": "seminar-room",
+    "seats": 0,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-102235"
+  },
+  {
+    "id": "102175",
+    "name": "Room 102175",
+    "timeEditId": null,
+    "type": "seminar-room",
+    "seats": 0,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-102175"
+  },
+  {
+    "id": "100188",
+    "name": "Room 100188",
+    "timeEditId": null,
+    "type": "seminar-room",
+    "seats": 0,
+    "building": "Ångström",
+    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-100188"
+  }
+]
