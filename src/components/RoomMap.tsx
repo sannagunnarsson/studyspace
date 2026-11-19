@@ -13,6 +13,8 @@ const CAMPUS_ID = 49;
 const CENTER = { lng: 17.6474, lat: 59.8391 }; // middle of the Ångström complex
 const ROOMS = geometry as unknown as Record<string, { z: number; floor: string; polygon: [number, number][] }>;
 // Floors that have rooms in the app, top floor first (like a lift panel).
+// Start on the entrance floor (0), which has most of the study rooms.
+const START_Z = 1;
 const FLOORS = [...new Map(Object.values(ROOMS).map((r) => [r.z, { z: r.z, name: r.floor }])).values()].sort((a, b) => b.z - a.z);
 
 // Minimal surface of the MazeMap/Mapbox API that this component uses.
@@ -88,7 +90,7 @@ export function RoomMap({
   const mapRef = useRef<MapLike | null>(null);
   const onSelectRef = useRef(onSelect);
   const [ready, setReady] = useState(false);
-  const [floorZ, setFloorZ] = useState(2);
+  const [floorZ, setFloorZ] = useState(START_Z);
   const [compact, setCompact] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -109,14 +111,16 @@ export function RoomMap({
           campuses: CAMPUS_ID,
           center: CENTER,
           zoom: compact ? 16.7 : 16.9, // MazeMap hides indoor floors below ~16.6
-          zLevel: 2,
+          zLevel: START_Z,
           zLevelControl: false,
         });
         mapRef.current = map;
         const syncFloor = () => {
-          setFloorZ(map.zLevel);
+          // MazeMap may not report a floor until its campus data has loaded.
+          const z = typeof map.zLevel === 'number' ? map.zLevel : START_Z;
+          setFloorZ(z);
           for (const layer of ['rooms-fill', 'rooms-outline']) {
-            map.setFilter(layer, ['all', ['==', ['get', 'z'], map.zLevel], ['has', 'color']]);
+            map.setFilter(layer, ['all', ['==', ['get', 'z'], z], ['has', 'color']]);
           }
         };
         // Add our layers as soon as the base style is ready instead of waiting for
@@ -243,7 +247,7 @@ export function RoomMap({
           >
             {FLOORS.map((f) => (
               <option key={f.z} value={f.z}>
-                Floor {f.name} ({freeOn(f.z)} free)
+                Floor {f.name} · {freeOn(f.z)} free
               </option>
             ))}
           </select>

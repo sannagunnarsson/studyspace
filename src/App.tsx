@@ -8,13 +8,17 @@ import {
   type RoomAvailability,
 } from './utils/availability';
 import {
+  addDays,
   atMinutesFromMidnight,
   formatClock,
+  formatDayLabel,
+  formatDuration,
   formatMinutes,
   minutesSinceMidnight,
   toDateKey,
 } from './utils/time';
 import roomsData from './data/rooms.json';
+import geometry from './data/roomGeometry.json';
 import { RoomMap } from './components/RoomMap';
 
 const STEP_MINUTES = 15;
@@ -50,10 +54,41 @@ const TYPE_FILTERS = [
 ] as const;
 type TypeFilterKey = (typeof TYPE_FILTERS)[number]['key'];
 
-function describe(a: RoomAvailability): string {
+// "How long do you need it?" — minimum free time from the chosen moment.
+const NEED_OPTIONS = [
+  { minutes: 0, label: 'Any' },
+  { minutes: 60, label: '1 h+' },
+  { minutes: 120, label: '2 h+' },
+  { minutes: 180, label: '3 h+' },
+] as const;
+
+const FLOOR_OF = geometry as unknown as Record<string, { floor: string }>;
+const floorLabel = (id: string) => (FLOOR_OF[id] ? `Floor ${FLOOR_OF[id].floor}` : null);
+
+/** Free minutes from `at` until the next booking, capped at midnight. */
+const freeFor = (a: RoomAvailability, at: number) => Math.min(a.freeMinutes, 24 * 60 - at);
+
+function describe(a: RoomAvailability, at: number): string {
   if (a.status === 'OCCUPIED') return `Busy until ${formatClock(a.busyUntil!)}`;
-  if (a.freeUntil) return `Free until ${formatClock(a.freeUntil)}`;
+  if (a.freeUntil) return `Free for ${formatDuration(freeFor(a, at))} · until ${formatClock(a.freeUntil)}`;
   return 'Free for the rest of the day';
+}
+
+/** Group room · Floor 1 · 6 seats */
+const roomSubtitle = (room: (typeof roomsData)[number]) =>
+  [TYPE_LABEL[room.type], floorLabel(room.id), room.seats > 0 && `${room.seats} seats`].filter(Boolean).join(' · ');
+
+function Legend() {
+  return (
+    <ul aria-label="Colour key" className="flex flex-wrap gap-x-3 gap-y-1 text-xs text-muted">
+      {(Object.keys(STATUS) as AvailabilityStatus[]).map((s) => (
+        <li key={s} className="flex items-center gap-1.5">
+          <StatusDot status={s} size="h-2 w-2" />
+          {STATUS[s].label}
+        </li>
+      ))}
+    </ul>
+  );
 }
 
 /** "2026-12-18" -> "18 Dec" */
@@ -125,6 +160,7 @@ function App() {
   const [loaded, setLoaded] = useState<{ date: string; result: BookingsResult } | null>(null);
   const [query, setQuery] = useState('');
   const [typeFilter, setTypeFilter] = useState<TypeFilterKey>('all');
+  const [need, setNeed] = useState(0); // minutes the user needs the room for
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [panelOpen, setPanelOpen] = useState(true); // desktop side panel
   const [sheetExpanded, setSheetExpanded] = useState(false); // mobile bottom sheet
@@ -156,12 +192,25 @@ function App() {
       const bookings = bookingsByRoom.get(room.id) ?? [];
       return { room, bookings, availability: getRoomAvailability(at, bookings) };
     })
-    .sort((a, b) => STATUS[a.availability.status].rank - STATUS[b.availability.status].rank);
+    // Free rooms first, the longest free stretch at the top; busy rooms by when they free up.
+    .sort(
+      (a, b) =>
+        STATUS[a.availability.status].rank - STATUS[b.availability.status].rank ||
+        freeFor(b.availability, timeOffset) - freeFor(a.availability, timeOffset) ||
+        (a.availability.busyUntil?.getTime() ?? 0) - (b.availability.busyUntil?.getTime() ?? 0) ||
+        a.room.name.localeCompare(b.room.name, 'sv', { numeric: true }),
+    );
   const q = query.trim().toLowerCase();
   const allowedTypes: readonly string[] | null = TYPE_FILTERS.find((f) => f.key === typeFilter)!.types;
   const ofType = allowedTypes ? rooms.filter(({ room }) => allowedTypes.includes(room.type)) : rooms;
-  const visible = q ? ofType.filter(({ room }) => `${room.name} ${room.id}`.toLowerCase().includes(q)) : ofType;
+  const longEnough = need ? ofType.filter((r) => freeFor(r.availability, timeOffset) >= need) : ofType;
+  const visible = q
+    ? longEnough.filter(({ room }) => `${room.name} ${room.id} ${TYPE_LABEL[room.type]}`.toLowerCase().includes(q))
+    : longEnough;
   const freeCount = ofType.filter((r) => r.availability.status !== 'OCCUPIED').length;
+  const [todayKey] = useState(() => toDateKey(new Date()));
+  const canGoBack = !coverage || addDays(selectedDate, -1) >= coverage.from;
+  const canGoForward = !coverage || addDays(selectedDate, 1) <= coverage.to;
   const selected = rooms.find((r) => r.room.id === selectedId) ?? null;
 
   const goToNow = () => {
@@ -172,7 +221,8 @@ function App() {
   const selectRoom = (id: string | null) => {
     setSelectedId(id);
     setPanelOpen(true);
-    if (id) setSheetExpanded(true);
+    // Keep the sheet low on phones so the map can show the picked room.
+    if (id) setSheetExpanded(false);
   };
   const pickTime = (e: MouseEvent<HTMLElement>, roomId?: string) => {
     const r = e.currentTarget.getBoundingClientRect();
@@ -203,7 +253,8 @@ function App() {
         <span className="h-1 w-10 rounded-full bg-line" />
       </button>
 
-      <div className="border-b border-line px-4 pb-3 md:pt-4">
+      {/* On phones a room's details replace search and filters, so they fit above the fold. */}
+      <div className={`border-b border-line px-4 pb-3 md:block md:pt-4 ${selected ? 'hidden' : ''}`}>
         <div className="mb-3 hidden items-center justify-between md:flex">
           <h1 className="font-bold tracking-tight">StudySpace</h1>
           <button
@@ -257,9 +308,28 @@ function App() {
             </button>
           ))}
         </div>
+        <div role="group" aria-label="Free for at least" className="mt-2 flex items-center gap-2 text-sm">
+          <span className="shrink-0 text-muted">Need it for</span>
+          <div className="flex flex-1 rounded-lg bg-paper p-0.5">
+            {NEED_OPTIONS.map((o) => (
+              <button
+                key={o.minutes}
+                type="button"
+                aria-pressed={need === o.minutes}
+                onClick={() => {
+                  setNeed(o.minutes);
+                  setSelectedId(null);
+                }}
+                className={`h-7 flex-1 rounded-md px-1 ${need === o.minutes ? 'bg-surface font-semibold shadow-float' : 'text-muted hover:text-ink'}`}
+              >
+                {o.label}
+              </button>
+            ))}
+          </div>
+        </div>
       </div>
 
-      <div className="min-h-0 flex-1 overflow-y-auto">
+      <div key={selectedId ?? "list"} className="min-h-0 flex-1 overflow-y-auto">
         {loading ? (
           <p className="px-4 py-10 text-center text-sm text-muted">Loading bookings…</p>
         ) : noData ? (
@@ -268,14 +338,28 @@ function App() {
           <RoomDetail row={selected} at={timeOffset} onBack={() => setSelectedId(null)} />
         ) : (
           <>
-            <p aria-live="polite" className="px-4 pb-1 pt-3 text-sm text-muted">
-              {freeCount} of {ofType.length} rooms free at {formatMinutes(timeOffset)}
-            </p>
+            <div className="space-y-2 px-4 pb-1 pt-3">
+              <p aria-live="polite" className="text-sm">
+                <strong className="font-semibold">{freeCount} of {ofType.length} rooms free</strong>{' '}
+                <span className="text-muted">
+                  {selectedDate === todayKey ? '' : `${formatDayLabel(selectedDate, todayKey)} `}at {formatMinutes(timeOffset)}
+                </span>
+              </p>
+              <Legend />
+            </div>
             {visible.length === 0 ? (
               <div className="px-4 py-8 text-sm">
-                <p className="mb-2">No rooms match “{query}”.</p>
-                <button type="button" onClick={() => setQuery('')} className="font-semibold underline underline-offset-2">
-                  Clear search
+                <p className="mb-2">
+                  {q
+                    ? `No rooms match “${query}”.`
+                    : `No room is free for ${formatDuration(need)} from ${formatMinutes(timeOffset)}.`}
+                </p>
+                <button
+                  type="button"
+                  onClick={() => (q ? setQuery('') : setNeed(0))}
+                  className="font-semibold underline underline-offset-2"
+                >
+                  {q ? 'Clear search' : 'Show all rooms'}
                 </button>
               </div>
             ) : (
@@ -289,13 +373,13 @@ function App() {
                     >
                       <StatusDot status={availability.status} size="h-3 w-3" />
                       <span className="min-w-0 flex-1">
-                        <span className="block font-medium">{room.name}</span>
-                        <span className="block text-sm text-muted">{describe(availability)}</span>
+                        <span className="block truncate font-medium">{room.name}</span>
+                        <span className="block truncate text-xs text-muted">{roomSubtitle(room)}</span>
+                        <span className={`block text-sm ${availability.status === 'OCCUPIED' ? 'text-muted' : ''}`}>
+                          {describe(availability, timeOffset)}
+                        </span>
                       </span>
-                      <span className="shrink-0 text-right text-xs text-muted">
-                        <span className="block">{STATUS[availability.status].label}</span>
-                        {room.seats ? <span className="block">{room.seats} seats</span> : null}
-                      </span>
+                      <Icon d="M9 18l6-6-6-6" className="h-4 w-4 shrink-0 text-muted" />
                     </button>
                   </li>
                 ))}
@@ -407,16 +491,49 @@ function App() {
               {formatMinutes(timeOffset)}
             </output>
             <div className="order-last flex w-full items-center gap-2 sm:order-none sm:w-auto">
-              <label htmlFor="date" className="sr-only">Date</label>
-              <input
-                id="date"
-                type="date"
-                value={selectedDate}
-                min={coverage?.from}
-                max={coverage?.to}
-                onChange={(e) => e.target.value && setSelectedDate(e.target.value)}
-                className="h-9 min-w-0 flex-1 rounded-md border border-line bg-surface px-2 text-sm sm:flex-none"
-              />
+              <div className="flex h-9 min-w-0 flex-1 items-center rounded-md border border-line sm:flex-none">
+                <button
+                  type="button"
+                  aria-label="Previous day"
+                  title="Previous day"
+                  disabled={!canGoBack}
+                  onClick={() => setSelectedDate(addDays(selectedDate, -1))}
+                  className="grid h-full w-9 shrink-0 place-items-center text-muted hover:text-ink disabled:opacity-30"
+                >
+                  <Icon d={I.back} className="h-4 w-4" />
+                </button>
+                {/* The native date picker sits invisibly on top of the friendly label. */}
+                <label className="relative flex h-full min-w-0 flex-1 cursor-pointer items-center justify-center border-x border-line px-3 text-sm font-medium sm:w-40 sm:flex-none">
+                  <span className="truncate">
+                    {formatDayLabel(selectedDate, todayKey)}
+                    {/* "Today" / "Tomorrow" get the date added; other days already show it. */}
+                    {!/\d/.test(formatDayLabel(selectedDate, todayKey)) && (
+                      <span className="font-normal text-muted"> · {formatDay(selectedDate)}</span>
+                    )}
+                  </span>
+                  <span className="sr-only">Choose date</span>
+                  <input
+                    id="date"
+                    type="date"
+                    value={selectedDate}
+                    min={coverage?.from}
+                    max={coverage?.to}
+                    onChange={(e) => e.target.value && setSelectedDate(e.target.value)}
+                    onClick={(e) => e.currentTarget.showPicker?.()}
+                    className="absolute inset-0 cursor-pointer opacity-0"
+                  />
+                </label>
+                <button
+                  type="button"
+                  aria-label="Next day"
+                  title="Next day"
+                  disabled={!canGoForward}
+                  onClick={() => setSelectedDate(addDays(selectedDate, 1))}
+                  className="grid h-full w-9 shrink-0 place-items-center text-muted hover:text-ink disabled:opacity-30"
+                >
+                  <Icon d="M9 18l6-6-6-6" className="h-4 w-4" />
+                </button>
+              </div>
               <button
                 type="button"
                 onClick={goToNow}
@@ -450,6 +567,20 @@ function App() {
             onChange={(e) => setTimeOffset(Number(e.target.value))}
             className="mt-3 h-2 w-full cursor-pointer"
           />
+          <div aria-hidden className="relative mt-1 h-4 text-[11px] text-muted tabular-nums">
+            {[0, 6, 9, 12, 15, 18, 21].map((h) => (
+              <button
+                key={h}
+                type="button"
+                tabIndex={-1}
+                onClick={() => setTimeOffset(h * 60)}
+                className={`absolute -translate-x-1/2 hover:text-ink ${h === 0 ? 'translate-x-0' : ''}`}
+                style={{ left: `${((h * 60) / LAST_SLOT) * 100}%` }}
+              >
+                {String(h).padStart(2, '0')}
+              </button>
+            ))}
+          </div>
         </section>
         {view === 'map' ? (
           <RoomMap
@@ -509,13 +640,35 @@ function RoomDetail({ row, at, onBack }: { row: RoomRow; at: number; onBack: () 
       </button>
       <h2 className="text-2xl font-semibold tracking-tight">{room.name}</h2>
       <p className="text-sm text-muted">
-        {[TYPE_LABEL[room.type], room.seats > 0 && `${room.seats} seats`, `${room.building} ${room.id}`].filter(Boolean).join(' · ')}
+        {[roomSubtitle(room), `${room.building} ${room.id}`].join(' · ')}
       </p>
+      <div className="mt-3 flex flex-wrap gap-2 text-sm">
+        {room.mazeMapUrl && (
+          <a
+            href={room.mazeMapUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="rounded-md border border-line px-3 py-1.5 font-medium hover:bg-paper"
+          >
+            Directions in MazeMap ↗
+          </a>
+        )}
+        {room.timeEditId && (
+          <a
+            href="https://cloud.timeedit.net/uu/web/wr_student/"
+            target="_blank"
+            rel="noreferrer"
+            className="rounded-md border border-line px-3 py-1.5 font-medium hover:bg-paper"
+          >
+            Book in TimeEdit ↗
+          </a>
+        )}
+      </div>
       <div className="mt-4 flex items-center gap-3 rounded-lg bg-paper px-3 py-3">
         <StatusDot status={availability.status} size="h-3 w-3" />
         <div>
           <p className="font-medium">{STATUS[availability.status].label}</p>
-          <p className="text-sm text-muted">{describe(availability)}</p>
+          <p className="text-sm text-muted">{describe(availability, at)}</p>
         </div>
       </div>
       <h3 className="mb-2 mt-6 text-sm font-semibold">Bookings this day</h3>

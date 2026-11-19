@@ -42,3 +42,26 @@ export function formatMinutes(minutes: number): string {
 export function formatClock(date: Date): string {
   return formatMinutes(date.getHours() * 60 + date.getMinutes());
 }
+
+/** "2026-11-18" moved by `days` (local calendar, DST-safe). */
+export function addDays(dateKey: string, days: number): string {
+  const [y, m, d] = dateKey.split('-').map(Number);
+  return toDateKey(new Date(y, m - 1, d + days));
+}
+
+/** 135 -> "2 h 15 min", 45 -> "45 min", 120 -> "2 h" */
+export function formatDuration(minutes: number): string {
+  const h = Math.floor(minutes / 60);
+  const m = Math.round(minutes % 60);
+  if (h === 0) return `${m} min`;
+  return m ? `${h} h ${m} min` : `${h} h`;
+}
+
+/** "Today", "Tomorrow", "Yesterday", otherwise "Fri 20 Nov". */
+export function formatDayLabel(dateKey: string, todayKey: string): string {
+  if (dateKey === todayKey) return 'Today';
+  if (dateKey === addDays(todayKey, 1)) return 'Tomorrow';
+  if (dateKey === addDays(todayKey, -1)) return 'Yesterday';
+  const [y, m, d] = dateKey.split('-').map(Number);
+  return new Date(y, m - 1, d).toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short' });
+}
