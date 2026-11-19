@@ -17,7 +17,15 @@ import {
   minutesSinceMidnight,
   toDateKey,
 } from './utils/time';
-import roomsData from './data/rooms.json';
+import allRooms from './data/rooms.json';
+
+/**
+ * Rooms hidden until they are added to the TimeEdit subscription. The feed only
+ * contains their bookings when they're shared with a subscribed room, so they
+ * would wrongly look free. Remove an id here once its bookings are in the feed.
+ */
+const HIDDEN_ROOMS = new Set(['11134', '11137']);
+const roomsData = allRooms.filter((r) => !HIDDEN_ROOMS.has(r.id));
 import geometry from './data/roomGeometry.json';
 import { RoomMap } from './components/RoomMap';
 
