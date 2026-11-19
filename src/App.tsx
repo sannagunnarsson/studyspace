@@ -24,7 +24,11 @@ import allRooms from './data/rooms.json';
  * contains their bookings when they're shared with a subscribed room, so they
  * would wrongly look free. Remove an id here once its bookings are in the feed.
  */
-const HIDDEN_ROOMS = new Set(['11134', '11137']);
+const HIDDEN_ROOMS = new Set([
+  '11134', '11137', '4002',
+  '102175', '102235', '103130', '103170', '103235', '103253',
+  '104130', '104150', '104170', '104190', '104245', '104253', '104277', '105277', '106277',
+]);
 const roomsData = allRooms.filter((r) => !HIDDEN_ROOMS.has(r.id));
 import geometry from './data/roomGeometry.json';
 import { RoomMap } from './components/RoomMap';
