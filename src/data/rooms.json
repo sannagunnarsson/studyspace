@@ -1006,14 +1006,5 @@
     "seats": 0,
     "building": "Ångström",
     "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-102175"
-  },
-  {
-    "id": "100188",
-    "name": "Room 100188",
-    "timeEditId": null,
-    "type": "seminar-room",
-    "seats": 0,
-    "building": "Ångström",
-    "mazeMapUrl": "https://use.mazemap.com/?campusid=49&sharepoitype=identifier&sharepoi=%C3%85ngstr%C3%B6m-100188"
   }
 ]
